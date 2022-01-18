@@ -11,59 +11,59 @@ To automate the creation of joint savings accounts, you’ll create a Solidity s
 ### Setup:
 After cloning the project repo to your local machine do the following:
 
-1. Open/Launch [Remix - Etherreum IDE](https://remix.ethereum.org/)
+1. **Open/Launch [Remix - Etherreum IDE](https://remix.ethereum.org/)**
 
-2. Using the File Explorer and "default_workspace" select `Load a local file into current workspace` and using the file explorer pop-up window Navigate to the repo folder to select/open `joint_savings.sol` file
+2. **Using the File Explorer and "default_workspace" select `Load a local file into current workspace` and using the file explorer pop-up window Navigate to the repo folder to select/open `joint_savings.sol` file**
 
-![load_file](images/load_file.png)
+      ![load_file](images/load_file.PNG)
 
-3. Within Remix select the `joint_savings.sol` file
+3. **Within Remix select the `joint_savings.sol` file**
 
-![load_file1](images/load_file1.png)
+      ![load_file1](images/load_file1.PNG)
 
-4. Select the `Solidity Compiler` icon and set the following:
+4. **Select the `Solidity Compiler` icon and set the following:**
     * Compiler: 0.8.7+commit.e28d00a7
     * Language: Solidity
     * EVM Version: compiler default
     * Compiler Configuration: select only 'Auto compile'
     * Contract: JointSavings(joint_savings.sol)
 
-![Solidity Compiler](images/solidity_compiler.png)
+     ![Solidity Compiler](images/solidity_compiler.PNG)
 
-5. `Compile joint_savings.sol`
+5. **Compile `joint_savings.sol`**
 
-6. Select the `Deploy & Run Transactions` icon and set the following:
+6. **Select the `Deploy & Run Transactions` icon and set the following:**
     * Environment: JavaScript VM (London)
     * Account: Default
     * Gas Limit: 3000000
     * Value: 0 Wei
     * Contract: JointSavings - joint_savings.sol 
 
-![deploy](images/deploy.png)
+     ![deploy](images/deploy.PNG)
 
-7. `Deploy`
+7. **Select `Deploy`**
 
-![deployed1](images/deployed1.png)
+      ![deployed1](images/deployed1.PNG)
 
-8. Confirm deployment
+8. **Confirm deployment**
 
-![block_0](images/block_0.png)
+      ![block_0](images/block_0.PNG)
 
 ---
 ### Interacting with Deployed Smart Contract
 1. Use the `setAccounts` function to define the authorized Ethereum address that will be able to withdraw funds from your contract by selecting the drop-down arrow.
 
-![deployed2](images/deployed2.png)
+      ![deployed2](images/deployed2.PNG)
 
 2. Copy 2 account addresses and paste them in the corresponding `account1` and `account2` fields within setAccounts and select `transact`
 
-![copyAddress](images/deployed_copy_address.png)
+      ![copyAddress](images/deployed_copy_address.PNG)
 
-![setAccounts](images/deployed_setAccounts.png)
+      ![setAccounts](images/deployed_setAccounts.PNG)
 
 3. Confirm by selecting the drop-down arrow next to `'Debug'` in the console window
 
-![block_1](images/block_1.png)
+      ![block_1](images/block_1.PNG)
 
 4. Test the deposit functionality of your smart contract by sending the following amounts of ether. After each transaction, use the `contractBalance` function to verify that the funds were added to your contract:
 
@@ -75,24 +75,30 @@ After cloning the project repo to your local machine do the following:
 
 >NOTE: Remembering how to convert ether to wei and vice versa can be challenging. So, you can use a website like [Ethereum Unit Converter](https://eth-converter.com/) to ease doing the conversion.
 
-![block_deposit](images/block_deposit.png)
+![block_deposit](images/block_deposit.PNG)
 
 5. Once you’ve successfully deposited funds into your contract, test the contract’s withdrawal functionality by withdrawing 5 ether into `accountOne` and 10 ether into `accountTwo`. After each transaction, use the `contractBalance` function to verify that the funds were withdrawn from your contract. Also, use the `lastToWithdraw` and `lastWithdrawAmount` functions to verify that the address and amount were correct.
 
     * Withdraw 5 ETH to `account1`
-    ![withdraw1](images/withdraw1.png)
+    
+      ![withdraw1](images/withdraw1.PNG)
 
     * Withdraw 10 ETH to `account2`
-    ![withdraw2](images/withdraw2.png)
+    
+      ![withdraw2](images/withdraw2.PNG)
 
     * Check `contractBalance` function after withdrawing
-    ![withdraw3](images/withdraw3.png)
+    
+      ![withdraw3](images/withdraw3.PNG)
 
     * Confirm withdraw blocks
-    ![block_withdraw](images/block_withdraw.png)
+    
+      ![block_withdraw](images/block_withdraw.PNG)
 
     * Check and confirm `lastToWithdraw` and `lastWithdrawAmount` functions
-    ![last_to_withdraw](images/last_to_withdraw.png)
+    
+      ![last_to_withdraw](images/last_to_withdraw.PNG)
 
 6. Double confirm account balances by checking `Account` addresses and their corresponding balances
-![addressBalances](images/addressBalances.png)
+
+      ![addressBalances](images/addressBalances.png)
